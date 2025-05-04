@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,51 +54,58 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+  body {
+    @apply bg-portfolioNavy text-portfolioLightSlate font-fira-code;
+    scroll-behavior: smooth;
+  }
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  ::selection {
+    @apply bg-portfolioTeal/30 text-portfolioLightestSlate;
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .section-heading {
+    @apply flex items-center mb-8;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  .section-heading-number {
+    @apply text-portfolioTeal mr-2 text-xl font-normal;
+  }
+
+  .section-heading-text {
+    @apply text-portfolioLightestSlate text-2xl font-semibold;
+  }
+
+  .section-heading-line {
+    @apply ml-4 h-px bg-portfolioSlate/30 w-full max-w-xs;
+  }
+
+  .tech-tag {
+    @apply px-3 py-1 text-xs rounded-full bg-portfolioTeal/10 text-portfolioTeal border border-portfolioTeal/20 inline-block m-1;
+  }
+
+  .nav-link {
+    @apply text-portfolioLightSlate hover:text-portfolioTeal transition-colors duration-300;
+  }
+
+  .nav-link-number {
+    @apply text-portfolioTeal mr-1 text-sm;
+  }
+
+  .button-primary {
+    @apply px-5 py-3 border border-portfolioTeal text-portfolioTeal rounded hover:bg-portfolioTeal/10 transition-colors duration-300;
+  }
+
+  .link-underline {
+    @apply text-portfolioTeal hover:underline underline-offset-4 transition-all duration-300;
+  }
+
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg shadow-xl;
   }
 }
