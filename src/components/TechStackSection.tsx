@@ -1,22 +1,19 @@
 
 import React from 'react';
 
-// Note: TechStackSection.tsx is a read-only file, so I've copied it to make modifications
-// This file is just to show what should be in TechStackSection.tsx, but we won't actually modify it
-
 const TechStackSection = () => {
   const techStack = [
-    { name: "Go" },
-    { name: "Python" },
-    { name: "C++" },
-    { name: "Java" },
-    { name: "JavaScript" },
-    { name: "Rust" },
-    { name: "Docker" },
-    { name: "ArgoCD" },
-    { name: "Git" },
-    { name: "SQL" },
-    { name: "VS Code" }
+    { name: "Go", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" },
+    { name: "Python", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" },
+    { name: "C++", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" },
+    { name: "Java", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" },
+    { name: "JavaScript", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" },
+    { name: "Rust", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/rust/rust-plain.svg" },
+    { name: "Docker", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" },
+    { name: "ArgoCD", icon: "https://cncf-branding.netlify.app/img/projects/argo/icon/color/argo-icon-color.svg" },
+    { name: "Git", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
+    { name: "SQL", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
+    { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" }
   ];
 
   return (
@@ -34,6 +31,11 @@ const TechStackSection = () => {
               className="glass-card p-4 min-w-[100px] text-center animate-fade-in hover:translate-y-[-5px] transition-transform duration-300"
               style={{animationDelay: `${index * 100}ms`}}
             >
+              <img 
+                src={tech.icon} 
+                alt={tech.name} 
+                className="w-12 h-12 mx-auto mb-2"
+              />
               <p className="text-portfolioLightestSlate">{tech.name}</p>
             </div>
           ))}
