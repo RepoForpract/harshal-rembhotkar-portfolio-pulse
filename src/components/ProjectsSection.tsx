@@ -29,9 +29,8 @@ const ProjectsSection = () => {
     <section id="projects" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-4xl">
         <div className="section-heading">
-          <span className="section-heading-number">03.</span>
-          <h2 className="section-heading-text">Projects</h2>
-          <div className="section-heading-line"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-portfolioLightestSlate mb-6">Projects</h2>
+          <div className="h-px bg-portfolioSlate/30 w-full max-w-xs mb-8"></div>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">

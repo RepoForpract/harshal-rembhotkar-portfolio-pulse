@@ -70,19 +70,7 @@
 
 @layer components {
   .section-heading {
-    @apply flex items-center mb-8;
-  }
-
-  .section-heading-number {
-    @apply text-portfolioTeal mr-2 text-xl font-normal;
-  }
-
-  .section-heading-text {
-    @apply text-portfolioLightestSlate text-2xl font-semibold;
-  }
-
-  .section-heading-line {
-    @apply ml-4 h-px bg-portfolioSlate/30 w-full max-w-xs;
+    @apply mb-8;
   }
 
   .tech-tag {
@@ -91,10 +79,6 @@
 
   .nav-link {
     @apply text-portfolioLightSlate hover:text-portfolioTeal transition-colors duration-300;
-  }
-
-  .nav-link-number {
-    @apply text-portfolioTeal mr-1 text-sm;
   }
 
   .button-primary {

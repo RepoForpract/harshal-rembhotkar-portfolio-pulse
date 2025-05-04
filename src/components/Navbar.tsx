@@ -5,12 +5,12 @@ import { Button } from '@/components/ui/button';
 import { Menu } from 'lucide-react';
 
 const navItems = [
-  { number: '01.', name: 'About', href: '#about' },
-  { number: '02.', name: 'Experience', href: '#experience' },
-  { number: '03.', name: 'Projects', href: '#projects' },
-  { number: '04.', name: 'Blog', href: '#blog' },
-  { number: '05.', name: 'Tech', href: '#tech' },
-  { number: '06.', name: 'Contact', href: '#contact' },
+  { name: 'About', href: '#about' },
+  { name: 'Experience', href: '#experience' },
+  { name: 'Projects', href: '#projects' },
+  { name: 'Blog', href: '#blog' },
+  { name: 'Tech', href: '#tech' },
+  { name: 'Contact', href: '#contact' },
 ];
 
 const Navbar = () => {
@@ -44,17 +44,9 @@ const Navbar = () => {
               href={item.href}
               className="nav-link text-sm"
             >
-              <span className="nav-link-number">{item.number}</span>
               {item.name}
             </a>
           ))}
-          <a 
-            href="/resume.pdf" 
-            download 
-            className="button-primary text-sm"
-          >
-            Resume
-          </a>
         </nav>
         
         {/* Mobile Navigation Toggle */}
@@ -81,17 +73,9 @@ const Navbar = () => {
               className="nav-link text-xl"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <span className="nav-link-number">{item.number}</span>
               {item.name}
             </a>
           ))}
-          <a 
-            href="/resume.pdf" 
-            download 
-            className="button-primary mt-4"
-          >
-            Resume
-          </a>
         </div>
       </div>
     </header>

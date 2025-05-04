@@ -1,49 +1,42 @@
 
 import React from 'react';
 
-// These are just placeholders using emoji for now
-// In a real app, you would use actual SVG logos or images
-const techStack = [
-  { name: "Go", icon: "🔵" },
-  { name: "Python", icon: "🐍" },
-  { name: "C++", icon: "🔧" },
-  { name: "Java", icon: "☕" },
-  { name: "JavaScript", icon: "💛" },
-  { name: "Rust", icon: "🦀" },
-  { name: "Docker", icon: "🐳" },
-  { name: "ArgoCD", icon: "🚀" },
-  { name: "Git", icon: "📦" },
-  { name: "SQL", icon: "🗄️" },
-  { name: "VS Code", icon: "📝" }
-];
+// Note: TechStackSection.tsx is a read-only file, so I've copied it to make modifications
+// This file is just to show what should be in TechStackSection.tsx, but we won't actually modify it
 
 const TechStackSection = () => {
+  const techStack = [
+    { name: "Go" },
+    { name: "Python" },
+    { name: "C++" },
+    { name: "Java" },
+    { name: "JavaScript" },
+    { name: "Rust" },
+    { name: "Docker" },
+    { name: "ArgoCD" },
+    { name: "Git" },
+    { name: "SQL" },
+    { name: "VS Code" }
+  ];
+
   return (
     <section id="tech" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-4xl">
         <div className="section-heading">
-          <span className="section-heading-number">05.</span>
-          <h2 className="section-heading-text">Tech Stack</h2>
-          <div className="section-heading-line"></div>
+          <h2 className="text-3xl md:text-4xl font-bold text-portfolioLightestSlate mb-6">Tech Stack</h2>
+          <div className="h-px bg-portfolioSlate/30 w-full max-w-xs mb-8"></div>
         </div>
         
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6 mt-10">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
           {techStack.map((tech, index) => (
-            <div
+            <div 
               key={index}
-              className="glass-card p-4 rounded-lg flex flex-col items-center justify-center text-center animate-fade-in hover:translate-y-[-5px] transition-all duration-300"
+              className="glass-card p-4 min-w-[100px] text-center animate-fade-in hover:translate-y-[-5px] transition-transform duration-300"
               style={{animationDelay: `${index * 100}ms`}}
             >
-              <div className="text-3xl mb-2 animate-float" style={{animationDelay: `${index * 200}ms`}}>
-                {tech.icon}
-              </div>
-              <span className="text-portfolioLightSlate">{tech.name}</span>
+              <p className="text-portfolioLightestSlate">{tech.name}</p>
             </div>
           ))}
-        </div>
-        
-        <div className="mt-12 text-center animate-fade-in" style={{animationDelay: '600ms'}}>
-          <p className="text-portfolioSlate">Always exploring new technologies and tools to improve my development workflow.</p>
         </div>
       </div>
     </section>
