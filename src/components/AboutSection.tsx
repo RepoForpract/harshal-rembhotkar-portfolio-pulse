@@ -22,7 +22,7 @@ const AboutSection = () => {
           </p>
           <div className="mt-8">
             <a 
-              href="/resume.pdf" 
+              href="/harshal's resume.pdf" 
               download 
               className="button-primary inline-flex items-center"
             >
