@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, MapPin, SendHorizonal, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
@@ -15,6 +15,11 @@ const ContactSection = () => {
     email: '',
     message: ''
   });
+
+  // Initialize EmailJS with your public key
+  useEffect(() => {
+    emailjs.init("YOUR_PUBLIC_KEY"); // Replace with your actual EmailJS public key
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -51,7 +56,6 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Replace these with your actual EmailJS service ID, template ID, and user ID
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
@@ -60,10 +64,9 @@ const ContactSection = () => {
       };
 
       await emailjs.send(
-        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
-        templateParams,
-        "YOUR_USER_ID" // Replace with your EmailJS user ID
+        "YOUR_SERVICE_ID", // Replace with your actual EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your actual EmailJS template ID
+        templateParams
       );
 
       toast({
