@@ -1,11 +1,94 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Mail, Github, Linkedin, MapPin, SendHorizonal, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
+import { useToast } from '@/hooks/use-toast';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [id]: value
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Error",
+        description: "Please fill in all fields",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast({
+        title: "Error",
+        description: "Please enter a valid email address",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Replace these with your actual EmailJS service ID, template ID, and user ID
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: "Harshal Rembhotkar",
+      };
+
+      await emailjs.send(
+        "YOUR_SERVICE_ID", // Replace with your EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your EmailJS template ID
+        templateParams,
+        "YOUR_USER_ID" // Replace with your EmailJS user ID
+      );
+
+      toast({
+        title: "Success!",
+        description: "Your message has been sent. I'll get back to you soon!",
+      });
+
+      // Reset form
+      setFormData({
+        name: '',
+        email: '',
+        message: ''
+      });
+    } catch (error) {
+      console.error("Error sending email:", error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 px-6 md:px-12">
       <div className="container mx-auto max-w-6xl">
@@ -90,13 +173,15 @@ const ContactSection = () => {
           
           {/* Contact Form */}
           <div className="bg-portfolioNavy/30 p-6 rounded-lg glass-card">
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
                 <label htmlFor="name" className="text-portfolioLightSlate block mb-2">Your Name</label>
                 <Input 
                   id="name" 
                   placeholder="John Doe" 
                   className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               
@@ -107,6 +192,8 @@ const ContactSection = () => {
                   type="email" 
                   placeholder="john@example.com" 
                   className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
               </div>
               
@@ -116,15 +203,18 @@ const ContactSection = () => {
                   id="message" 
                   placeholder="How can I help you?" 
                   className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal min-h-[150px]"
+                  value={formData.message}
+                  onChange={handleChange}
                 />
               </div>
               
               <Button 
                 type="submit"
                 className="w-full bg-portfolioTeal hover:bg-portfolioTeal/80 text-portfolioNavy font-medium flex items-center justify-center"
+                disabled={isSubmitting}
               >
-                Send Message
-                <SendHorizonal className="ml-2 h-4 w-4" />
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {!isSubmitting && <SendHorizonal className="ml-2 h-4 w-4" />}
               </Button>
             </form>
           </div>
