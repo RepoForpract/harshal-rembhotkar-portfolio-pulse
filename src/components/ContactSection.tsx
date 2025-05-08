@@ -65,7 +65,7 @@ const ContactSection = () => {
 
       await emailjs.send(
         "service_g3qjc9v", // Replace with your actual EmailJS service ID
-        "YOUR_TEMPLATE_ID", // Replace with your actual EmailJS template ID
+        "template_dzjlmw5", // Replace with your actual EmailJS template ID
         templateParams
       );
 
