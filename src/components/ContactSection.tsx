@@ -1,11 +1,11 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Mail, Github, Linkedin, MapPin, SendHorizonal, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
 import { useToast } from '@/hooks/use-toast';
-import { Separator } from '@/components/ui/separator';
+import emailjs from 'emailjs-com';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -15,6 +15,11 @@ const ContactSection = () => {
     email: '',
     message: ''
   });
+
+  // Initialize EmailJS with your public key
+  useEffect(() => {
+    emailjs.init("7uGtmvDna5QCqLzVdY"); // Replace with your actual EmailJS public key
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -51,15 +56,22 @@ const ContactSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Instead of using EmailJS, send a success message for now
-      // In a real application, you would implement your email sending logic here
-      
-      // Simulate network request
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: formData.message,
+        to_name: "Harshal Rembhotkar",
+      };
+
+      await emailjs.send(
+        "service_g3qjc9v", // Replace with your actual EmailJS service ID
+        "YOUR_TEMPLATE_ID", // Replace with your actual EmailJS template ID
+        templateParams
+      );
+
       toast({
-        title: "Message received!",
-        description: "Thank you for your message. I'll get back to you soon!",
+        title: "Success!",
+        description: "Your message has been sent. I'll get back to you soon!",
       });
 
       // Reset form
@@ -69,7 +81,7 @@ const ContactSection = () => {
         message: ''
       });
     } catch (error) {
-      console.error("Error processing form:", error);
+      console.error("Error sending email:", error);
       toast({
         title: "Failed to send message",
         description: "There was an error sending your message. Please try again later.",
@@ -89,13 +101,6 @@ const ContactSection = () => {
             I'm currently looking for new opportunities and my inbox is always open. 
             Whether you have a question or just want to say hi, I'll try my best to get back to you!
           </p>
-        </div>
-        
-        {/* Custom HR element */}
-        <div className="flex items-center justify-center mb-12">
-          <Separator className="w-1/3 bg-portfolioTeal/30" />
-          <div className="mx-4 text-portfolioTeal">●</div>
-          <Separator className="w-1/3 bg-portfolioTeal/30" />
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
