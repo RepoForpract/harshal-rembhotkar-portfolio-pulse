@@ -13,7 +13,9 @@ const TechStackSection = () => {
     { name: "ArgoCD", icon: "https://raw.githubusercontent.com/argoproj/argo-cd/master/docs/assets/argo-cd-logo.svg" },
     { name: "Git", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg" },
     { name: "SQL", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
-    { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" }
+    { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" },
+    { name: "Remix IDE", icon: "https://remix.ethereum.org/assets/logo.svg" }
+  
   ];
 
   return (
