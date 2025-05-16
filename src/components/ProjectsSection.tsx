@@ -5,6 +5,12 @@ import { Button } from '@/components/ui/button';
 
 const projects = [
   {
+    title: "FetchYT",
+    description: "Developed a web app using Go and modern frontend tech to download YouTube videos by URL, supporting multiple formats and resolutions with background processing.",
+    tags: ["Go", "FFmpeg", "Javascript","HTML", "CSS"],
+    github: "https://github.com/harshal-rembhotkar/fetchyt"
+  },
+  {
     title: "Book Sphere",
     description: "Developed a RESTful API for efficient bookstore management. Leveraged MySQL for seamless database integration.",
     tags: ["Go", "Mux", "MySQL", "GORM"],
