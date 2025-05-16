@@ -12,7 +12,7 @@ const AboutSection = () => {
         
         <div className="animate-fade-in">
           <p className="mb-4 text-portfolioSlate">
-            I'm obsessed with building powerful, scalable backends that make everything run smoothly and keep users coming back for more.
+            I'm Web3 enthusiast and aspiring software developer passionate about building decentralized applications and exploring the future of the internet.
           </p>
           <p className="mb-4 text-portfolioSlate">
             My goal is to create software solutions that are not only efficient and reliable but also delightful to use and easy to maintain.
