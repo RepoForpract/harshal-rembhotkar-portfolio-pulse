@@ -14,14 +14,26 @@ const blogPosts = [
   {
     title: "Getting Started with Microsoft Semantic Kernel: A Simple Guide to Prompts and Plugins in Python",
     brief: "Semantic Kernel is an open-source SDK by Microsoft that lets you combine code (your logic and plugins) with language models (like OpenAI's GPT or Azure OpenAI) to build AI-first applications..",
-    dateAdded: "May 2024",
+    dateAdded: "May 2025",
     slug: "Getting-started-with-microsoft-semantic-kernel-a-simple-guide-to-prompts-and-plugins-in-python"
+  },
+  {
+    title: "Kubernetes v1.33: What’s New in the World of Cloud Magic?",
+    brief: "Now, Kubernetes just got an upgrade. 🎉 Say hello to Kubernetes v1.33 - a fresh version with cool new features, improvements and bug fixes. Whether you're a beginner tech wizard or a senior engineer, this post will walk you through what’s new in v1.33 in simple terms.",
+    dateAdded: "May 2025",
+    slug: "kubernetes-v133-whats-new-in-the-world-of-cloud-magic"
   },
   {
     title: "Mogenius: Making Kubernetes Feel Effortless for Developers",
     brief: "Discover how Mogenius simplifies Kubernetes for developers, making cloud-native application deployment and management accessible without deep infrastructure expertise.",
-    dateAdded: "May 2024",
+    dateAdded: "May 2025",
     slug: "mogenius-making-kubernetes-feel-effortless-for-developers"
+  },
+  {
+    title: "Kubewall Case Study",
+    brief: "Kubewall is a single binary tool designed to simplify the management of multiple Kubernetes clusters. It offers a rich, real-time interface for monitoring and investigating clusters.",
+    dateAdded: "Jan 2025",
+    slug: "kubewall-case-study"
   },
   {
     title: "Useful Terraform Commands You Need to Know",
