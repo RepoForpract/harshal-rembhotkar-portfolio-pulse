@@ -17,7 +17,7 @@ const projects = [
     github: "https://github.com/harshal-rembhotkar/Book-Sphere"
   },
   {
-    title: "ActixPress",
+    title: "ActixPress (Under development)",
     description: "Built a Blogging website using Actix Web 3. Designed with both performance and developer experience in mind, ActixPress lets users publish and manage blog posts effortlessly.",
     tags: ["Rust", "Actix web3", "Javascript","HTML", "CSS"],
     github: "https://github.com/harshal-rembhotkar/actixpress"
