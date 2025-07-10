@@ -1,5 +1,5 @@
 import React from 'react';
-import { Mail, Github, Linkedin, MapPin, Twitter } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, Twitter, MessageCircle, Hash } from 'lucide-react';
 
 const ContactSection = () => {
         return (
@@ -78,6 +78,24 @@ const ContactSection = () => {
                         aria-label="Twitter"
                       >
                         <Twitter className="h-5 w-5 text-portfolioLightestSlate" />
+                      </a>
+                      <a 
+                        href="https://t.me/harshalrembhotkar" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-portfolioNavy/50 hover:bg-portfolioTeal/20 p-3 rounded-full transition-colors"
+                        aria-label="Telegram"
+                      >
+                        <MessageCircle className="h-5 w-5 text-portfolioLightestSlate" />
+                      </a>
+                      <a 
+                        href="https://discord.com/users/harshalr97" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="bg-portfolioNavy/50 hover:bg-portfolioTeal/20 p-3 rounded-full transition-colors"
+                        aria-label="Discord"
+                      >
+                        <Hash className="h-5 w-5 text-portfolioLightestSlate" />
                       </a>
                     </div>
                   </div>
