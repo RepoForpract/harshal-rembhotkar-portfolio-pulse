@@ -1,97 +1,7 @@
+import React from 'react';
+import { Mail, Github, Linkedin, MapPin, Twitter } from 'lucide-react';
 
-      import React, { useState, useEffect } from 'react';
-      import { Mail, Github, Linkedin, MapPin, SendHorizonal, Twitter } from 'lucide-react';
-      import { Button } from '@/components/ui/button';
-      import { Textarea } from '@/components/ui/textarea';
-      import { Input } from '@/components/ui/input';
-      import { useToast } from '@/hooks/use-toast';
-      import emailjs from '@emailjs/browser';
-
-      const ContactSection = () => {
-        const { toast } = useToast();
-        const [isSubmitting, setIsSubmitting] = useState(false);
-        const [formData, setFormData] = useState({
-          name: '',
-          email: '',
-          message: ''
-        });
-
-        // Initialize EmailJS with your public key
-        useEffect(() => {
-          emailjs.init("7uGtmvDna5QCqLzVdY"); // Replace with your actual EmailJS public key
-        }, []);
-
-        const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-          const { id, value } = e.target;
-          setFormData(prev => ({
-            ...prev,
-            [id]: value
-          }));
-        };
-
-        const handleSubmit = async (e: React.FormEvent) => {
-          e.preventDefault();
-
-          // Basic validation
-          if (!formData.name || !formData.email || !formData.message) {
-            toast({
-              title: "Error",
-              description: "Please fill in all fields",
-              variant: "destructive"
-            });
-            return;
-          }
-
-          // Email validation
-          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-          if (!emailRegex.test(formData.email)) {
-            toast({
-              title: "Error",
-              description: "Please enter a valid email address",
-              variant: "destructive"
-            });
-            return;
-          }
-
-          setIsSubmitting(true);
-
-          try {
-            const templateParams = {
-              from_name: formData.name,
-              from_email: formData.email,
-              message: formData.message,
-              to_name: "Harshal Rembhotkar",
-            };
-
-            await emailjs.send(
-              "service_g3qjc9v", // Replace with your actual EmailJS service ID
-              "template_dzjlmw5", // Replace with your actual EmailJS template ID
-              templateParams
-            );
-
-            toast({
-              title: "Success!",
-              description: "Your message has been sent. I'll get back to you soon!",
-            });
-
-            // Reset form
-            setFormData({
-              name: '',
-              email: '',
-              message: ''
-            });
-          } catch (error) {
-            console.error("Error sending email:", error);
-            toast({
-              title: "Failed to send message",
-              description: "There was an error sending your message. Please try again later.",
-              variant: "destructive"
-            });
-          } finally {
-            setIsSubmitting(false);
-          }
-        };
-
+const ContactSection = () => {
         return (
           <section id="contact" className="py-24 px-6 md:px-12">
             <div className="container mx-auto max-w-6xl">
@@ -103,14 +13,13 @@
                 </p>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                {/* Contact Info */}
+              <div className="max-w-2xl mx-auto">
                 <div className="space-y-10">
                   <div>
-                    <h3 className="text-xl text-portfolioLightestSlate font-semibold mb-6">Contact Information</h3>
+                    <h3 className="text-xl text-portfolioLightestSlate font-semibold mb-6 text-center">Contact Information</h3>
 
                     <div className="space-y-6">
-                      <div className="flex items-start">
+                      <div className="flex items-start justify-center">
                         <div className="bg-portfolioTeal/20 p-3 rounded-lg mr-4">
                           <Mail className="h-5 w-5 text-portfolioTeal" />
                         </div>
@@ -122,7 +31,7 @@
                         </div>
                       </div>
 
-                      <div className="flex items-start">
+                      <div className="flex items-start justify-center">
                         <div className="bg-portfolioTeal/20 p-3 rounded-lg mr-4">
                           <MapPin className="h-5 w-5 text-portfolioTeal" />
                         </div>
@@ -137,12 +46,12 @@
                   </div>
 
                   <div>
-                    <h3 className="text-xl text-portfolioLightestSlate font-semibold mb-6">Connect</h3>
-                    <p className="text-portfolioSlate mb-6">
+                    <h3 className="text-xl text-portfolioLightestSlate font-semibold mb-6 text-center">Connect</h3>
+                    <p className="text-portfolioSlate mb-6 text-center">
                       Follow me on social handles.
                     </p>
 
-                    <div className="flex space-x-4">
+                    <div className="flex space-x-4 justify-center">
                       <a 
                         href="https://github.com/harshal-rembhotkar" 
                         target="_blank"
@@ -172,54 +81,6 @@
                       </a>
                     </div>
                   </div>
-                </div>
-
-                {/* Contact Form */}
-                <div className="bg-portfolioNavy/30 p-6 rounded-lg glass-card">
-                  <form className="space-y-6" onSubmit={handleSubmit}>
-                    <div>
-                      <label htmlFor="name" className="text-portfolioLightSlate block mb-2">Your Name</label>
-                      <Input 
-                        id="name" 
-                        placeholder="John Doe" 
-                        className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
-                        value={formData.name}
-                        onChange={handleChange}
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="text-portfolioLightSlate block mb-2">Email Address</label>
-                      <Input 
-                        id="email" 
-                        type="email" 
-                        placeholder="john@example.com" 
-                        className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
-                        value={formData.email}
-                        onChange={handleChange}
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="message" className="text-portfolioLightSlate block mb-2">Message</label>
-                      <Textarea 
-                        id="message" 
-                        placeholder="How can I help you?" 
-                        className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal min-h-[150px]"
-                        value={formData.message}
-                        onChange={handleChange}
-                      />
-                    </div>
-
-                    <Button 
-                      type="submit"
-                      className="w-full bg-portfolioTeal hover:bg-portfolioTeal/80 text-portfolioNavy font-medium flex items-center justify-center"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? 'Sending...' : 'Send Message'}
-                      {!isSubmitting && <SendHorizonal className="ml-2 h-4 w-4" />}
-                    </Button>
-                  </form>
                 </div>
               </div>
 
