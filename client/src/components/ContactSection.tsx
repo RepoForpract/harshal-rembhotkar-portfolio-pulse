@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { Mail, Github, Linkedin, MapPin, SendHorizontal, Twitter } from 'lucide-react';
+import { Mail, Github, Linkedin, MapPin, SendHorizonal, Twitter } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
@@ -174,67 +174,6 @@ const ContactSection = () => {
             </div>
           </div>
           
-          {/* Contact Form */}
-          <div className="bg-portfolioNavy/30 p-8 rounded-lg border border-portfolioNavy">
-            <h3 className="text-xl text-portfolioLightestSlate font-semibold mb-6">Send a Message</h3>
-            
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div>
-                <Input
-                  id="name"
-                  type="text"
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="bg-portfolioNavy/50 border-portfolioLightNavy text-portfolioLightestSlate placeholder:text-portfolioSlate"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Input
-                  id="email"
-                  type="email"
-                  placeholder="Your Email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="bg-portfolioNavy/50 border-portfolioLightNavy text-portfolioLightestSlate placeholder:text-portfolioSlate"
-                  required
-                />
-              </div>
-              
-              <div>
-                <Textarea
-                  id="message"
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="bg-portfolioNavy/50 border-portfolioLightNavy text-portfolioLightestSlate placeholder:text-portfolioSlate resize-none"
-                  required
-                />
-              </div>
-              
-              <Button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-portfolioTeal hover:bg-portfolioTeal/80 text-portfolioNavy font-medium"
-              >
-                {isSubmitting ? (
-                  <>
-                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-portfolioNavy mr-2"></div>
-                    Sending...
-                  </>
-                ) : (
-                  <>
-                    <SendHorizonal className="mr-2 h-4 w-4" />
-                    Send Message
-                  </>
-                )}
-              </Button>
-            </form>
-          </div>
-        </div>
         
         <p className="mt-16 text-center text-xs text-portfolioSlate animate-fade-in">
         © 2025 Harshal Rembhotkar. All rights reserved.
