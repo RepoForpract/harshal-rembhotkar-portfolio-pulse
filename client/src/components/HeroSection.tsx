@@ -12,7 +12,7 @@ const HeroSection = () => {
           Harshal Rembhotkar.
         </h1>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-portfolioSlate mb-6 animate-fade-in" style={{animationDelay: '300ms'}}>
-          Aspiring Software Developer.
+          Software Developer.
         </h2>
         <p className="text-portfolioSlate max-w-xl text-lg mb-12 animate-fade-in" style={{animationDelay: '400ms'}}>
           I do Dev, I do Ops, and I do it (most days).
