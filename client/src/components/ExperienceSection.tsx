@@ -12,8 +12,8 @@ const ExperienceSection = () => {
     {
       company: "CoindPay",
       role: "Developer Community Ambassador",
-      startDate: "Jun 2024",
-      endDate: "Jul 2024"
+      startDate: "Jun 2025",
+      endDate: "Present"
     },
     {
       company: "Hashnode",
