@@ -181,7 +181,6 @@ const ContactSection = () => {
                 <label htmlFor="name" className="text-portfolioLightSlate block mb-2">Your Name</label>
                 <Input 
                   id="name" 
-                  placeholder="John Doe" 
                   className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
                   value={formData.name}
                   onChange={handleChange}
@@ -193,7 +192,6 @@ const ContactSection = () => {
                 <Input 
                   id="email" 
                   type="email" 
-                  placeholder="john@example.com" 
                   className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
                   value={formData.email}
                   onChange={handleChange}
@@ -204,7 +202,6 @@ const ContactSection = () => {
                 <label htmlFor="message" className="text-portfolioLightSlate block mb-2">Message</label>
                 <Textarea 
                   id="message" 
-                  placeholder="How can I help you?" 
                   className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal min-h-[150px]"
                   value={formData.message}
                   onChange={handleChange}
