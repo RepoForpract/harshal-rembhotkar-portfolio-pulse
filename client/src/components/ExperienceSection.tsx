@@ -1,9 +1,30 @@
-
 import React from 'react';
 import { Calendar } from 'lucide-react';
 
 const ExperienceSection = () => {
   const experiences = [
+    {
+      company: "Liquidos.ai",
+      role: "Founding Engineering Intern",
+      startDate: "Jul 2024",
+      endDate: "Present",
+      responsibilities: [
+        "Working as a founding engineering intern on building innovative AI-powered solutions.",
+        "Contributing to the development of core platform features and architecture decisions.",
+        "Collaborating with the founding team to shape the technical direction of the product."
+      ]
+    },
+    {
+      company: "CoindPay",
+      role: "Developer Community Ambassador",
+      startDate: "Jun 2024",
+      endDate: "Jul 2024",
+      responsibilities: [
+        "Engaged with the developer community to promote CoindPay's payment solutions.",
+        "Created technical content and documentation for developers.",
+        "Supported community members with integration questions and best practices."
+      ]
+    },
     {
       company: "Hashnode",
       role: "Technical Writer",
