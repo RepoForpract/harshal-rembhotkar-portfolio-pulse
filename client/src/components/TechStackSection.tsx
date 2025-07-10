@@ -13,7 +13,7 @@ const TechStackSection = () => {
     { name: "SQL", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original.svg" },
     { name: "Next.js", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nextjs/nextjs-original.svg" },
     { name: "VS Code", icon: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg" },
-    { name: "Remix IDE", icon: "https://remix.ethereum.org/assets/logo.svg" }
+    { name: "Remix IDE", icon: "https://github.com/ethereum/remix-project/blob/master/apps/remix-ide/src/assets/img/icon.png" }
     
   ];
 
