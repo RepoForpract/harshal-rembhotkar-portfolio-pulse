@@ -21,7 +21,7 @@ const ExperienceSection = () => {
       startDate: "Feb 2024",
       endDate: "Present"
     }
-  ];
+  ] || [];
 
   return (
     <section id="experience" className="py-24 px-6 md:px-12 bg-portfolioNavy/30">
@@ -32,7 +32,7 @@ const ExperienceSection = () => {
         </div>
         
         <div className="space-y-12">
-          {experiences?.map((exp, index) => (
+          {Array.isArray(experiences) && experiences.map((exp, index) => (
             <div 
               key={index} 
               className="glass-card p-6 animate-fade-in"
