@@ -32,7 +32,7 @@ const ExperienceSection = () => {
         </div>
         
         <div className="space-y-12">
-          {experiences.map((exp, index) => (
+          {experiences?.map((exp, index) => (
             <div 
               key={index} 
               className="glass-card p-6 animate-fade-in"
