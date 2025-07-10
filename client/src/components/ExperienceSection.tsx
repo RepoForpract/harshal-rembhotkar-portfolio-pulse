@@ -22,8 +22,7 @@ const ExperienceSection = () => {
       endDate: "Jul 2024",
       responsibilities: [
         "Engaged with the developer community to promote CoindPay's payment solutions.",
-        "Created technical content and documentation for developers.",
-        "Supported community members with integration questions and best practices."
+        
       ]
     },
     {
