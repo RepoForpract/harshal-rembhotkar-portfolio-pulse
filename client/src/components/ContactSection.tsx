@@ -48,7 +48,7 @@ const ContactSection = () => {
                   <div>
                     <h3 className="text-xl text-portfolioLightestSlate font-semibold mb-6 text-center">Connect</h3>
                     <p className="text-portfolioSlate mb-6 text-center">
-                      Follow me on social handles.
+                      Hit me up on socials, I'd love to stay in touch!
                     </p>
 
                     <div className="flex space-x-4 justify-center">
