@@ -13,7 +13,7 @@ const ProjectsSection = () => {
 
         <div className="text-center animate-fade-in">
           <p className="text-portfolioSlate text-lg mb-8">
-            All my projects and open source contributions can be found on my GitHub profile.
+            I love building things! You can explore all my projects and open source contributions on GitHub.
           </p>
 
           <Button
