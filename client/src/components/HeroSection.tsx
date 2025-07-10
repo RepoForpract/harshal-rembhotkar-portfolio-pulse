@@ -15,7 +15,7 @@ const HeroSection = () => {
           Software Developer.
         </h2>
         <p className="text-portfolioSlate max-w-xl text-lg mb-12 animate-fade-in" style={{animationDelay: '400ms'}}>
-          I do Dev, I do Ops, and I do it (most days).
+          I do Dev, I do Ops and I do it (most days).
         </p>
         <div className="animate-fade-in" style={{animationDelay: '500ms'}}>
           <Button

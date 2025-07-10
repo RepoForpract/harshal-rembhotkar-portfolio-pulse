@@ -6,14 +6,10 @@ const ExperienceSection = () => {
     {
       company: "Liquidos.ai",
       role: "Founding Engineering Intern",
-      startDate: "Jul 2024",
-      endDate: "Present",
-      responsibilities: [
-        "Working as a founding engineering intern on building innovative AI-powered solutions.",
-        "Contributing to the development of core platform features and architecture decisions.",
-        "Collaborating with the founding team to shape the technical direction of the product."
-      ]
+      startDate: "July 2025",
+      endDate: "Present"
     },
+    
     {
       company: "CoindPay",
       role: "Developer Community Ambassador",
