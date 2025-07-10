@@ -5,7 +5,7 @@
       import { Textarea } from '@/components/ui/textarea';
       import { Input } from '@/components/ui/input';
       import { useToast } from '@/hooks/use-toast';
-      import emailjs from 'emailjs-com';
+      import emailjs from '@emailjs/browser';
 
       const ContactSection = () => {
         const { toast } = useToast();
