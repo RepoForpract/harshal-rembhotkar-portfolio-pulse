@@ -1,8 +1,10 @@
+
 import React from 'react';
 import { Calendar } from 'lucide-react';
 
 const ExperienceSection = () => {
-  const experiences = [
+  // Define experiences array as a constant with proper type safety
+  const experiences = React.useMemo(() => [
     {
       company: "Liquidos.ai",
       role: "Founding Engineering Intern",
@@ -21,7 +23,7 @@ const ExperienceSection = () => {
       startDate: "Feb 2024",
       endDate: "Present"
     }
-  ] || [];
+  ], []);
 
   return (
     <section id="experience" className="py-24 px-6 md:px-12 bg-portfolioNavy/30">
@@ -32,9 +34,9 @@ const ExperienceSection = () => {
         </div>
         
         <div className="space-y-12">
-          {Array.isArray(experiences) && experiences.map((exp, index) => (
+          {experiences.map((exp, index) => (
             <div 
-              key={index} 
+              key={`experience-${index}`}
               className="glass-card p-6 animate-fade-in"
               style={{animationDelay: `${index * 200}ms`}}
             >
@@ -47,7 +49,6 @@ const ExperienceSection = () => {
                   <span className="text-sm">{exp.startDate} - {exp.endDate}</span>
                 </div>
               </div>
-              
             </div>
           ))}
         </div>
