@@ -7,33 +7,19 @@ const ExperienceSection = () => {
       company: "Liquidos.ai",
       role: "Founding Engineering Intern",
       startDate: "July 2025",
-      endDate: "Present",
-      responsibilities: [
-        "Working on founding engineering projects for AI-powered liquidity solutions.",
-        "Developing core infrastructure and features for the platform.",
-        "Collaborating with the founding team on product development."
-      ]
+      endDate: "Present"
     },
-    
     {
       company: "CoindPay",
       role: "Developer Community Ambassador",
       startDate: "Jun 2024",
-      endDate: "Jul 2024",
-      responsibilities: [
-        "Engaged with the developer community to promote CoindPay's payment solutions.",
-        
-      ]
+      endDate: "Jul 2024"
     },
     {
       company: "Hashnode",
       role: "Technical Writer",
       startDate: "Feb 2024",
-      endDate: "Present",
-      responsibilities: [
-        "I write technical blogs on open source, DevOps, and Development.",
-        "Each post reaches an audience of 100+ readers and offering valuable insights for learners."
-      ]
+      endDate: "Present"
     }
   ];
 
@@ -61,14 +47,7 @@ const ExperienceSection = () => {
                   <span className="text-sm">{exp.startDate} - {exp.endDate}</span>
                 </div>
               </div>
-              <ul className="space-y-2 text-portfolioLightSlate">
-                {exp.responsibilities?.map((resp, idx) => (
-                  <li key={idx} className="flex">
-                    <span className="text-portfolioTeal mr-2">▹</span>
-                    <span>{resp}</span>
-                  </li>
-                ))}
-              </ul>
+              
             </div>
           ))}
         </div>
