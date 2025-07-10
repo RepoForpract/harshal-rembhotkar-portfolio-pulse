@@ -7,7 +7,12 @@ const ExperienceSection = () => {
       company: "Liquidos.ai",
       role: "Founding Engineering Intern",
       startDate: "July 2025",
-      endDate: "Present"
+      endDate: "Present",
+      responsibilities: [
+        "Working on founding engineering projects for AI-powered liquidity solutions.",
+        "Developing core infrastructure and features for the platform.",
+        "Collaborating with the founding team on product development."
+      ]
     },
     
     {
@@ -58,7 +63,7 @@ const ExperienceSection = () => {
                 </div>
               </div>
               <ul className="space-y-2 text-portfolioLightSlate">
-                {exp.responsibilities.map((resp, idx) => (
+                {exp.responsibilities?.map((resp, idx) => (
                   <li key={idx} className="flex">
                     <span className="text-portfolioTeal mr-2">▹</span>
                     <span>{resp}</span>
