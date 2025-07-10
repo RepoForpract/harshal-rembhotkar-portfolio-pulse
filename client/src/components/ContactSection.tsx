@@ -174,51 +174,6 @@ const ContactSection = () => {
             </div>
           </div>
           
-          {/* Contact Form */}
-          <div className="bg-portfolioNavy/30 p-6 rounded-lg glass-card">
-            <form className="space-y-6" onSubmit={handleSubmit}>
-              <div>
-                <label htmlFor="name" className="text-portfolioLightSlate block mb-2">Your Name</label>
-                <Input 
-                  id="name" 
-                  className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
-                  value={formData.name}
-                  onChange={handleChange}
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="text-portfolioLightSlate block mb-2">Email Address</label>
-                <Input 
-                  id="email" 
-                  type="email" 
-                  className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal"
-                  value={formData.email}
-                  onChange={handleChange}
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="message" className="text-portfolioLightSlate block mb-2">Message</label>
-                <Textarea 
-                  id="message" 
-                  className="bg-portfolioNavy/50 border-portfolioSlate/30 text-portfolioLightestSlate focus-visible:ring-portfolioTeal min-h-[150px]"
-                  value={formData.message}
-                  onChange={handleChange}
-                />
-              </div>
-              
-              <Button 
-                type="submit"
-                className="w-full bg-portfolioTeal hover:bg-portfolioTeal/80 text-portfolioNavy font-medium flex items-center justify-center"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-                {!isSubmitting && <SendHorizonal className="ml-2 h-4 w-4" />}
-              </Button>
-            </form>
-          </div>
-        </div>
         
         <p className="mt-16 text-center text-xs text-portfolioSlate animate-fade-in">
         © 2025 Harshal Rembhotkar. All rights reserved.
