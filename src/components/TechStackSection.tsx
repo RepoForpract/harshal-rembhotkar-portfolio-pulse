@@ -1,3 +1,4 @@
+
 import React from 'react';
 
 const TechStackSection = () => {
@@ -16,6 +17,7 @@ const TechStackSection = () => {
     { name: "Remix IDE", icon: "https://remix.ethereum.org/assets/logo.svg" }
     
   ];
+
 
   return (
     <section id="tech" className="py-24 px-6 md:px-12">

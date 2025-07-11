@@ -52,16 +52,6 @@
     --sidebar-border: 220 13% 91%;
 
     --sidebar-ring: 217.2 91.2% 59.8%;
-
-    /* Portfolio Colors */
-    --portfolio-navy: 217 19% 8%;
-    --portfolio-light-navy: 216 15% 17%;
-    --portfolio-lightest-navy: 214 15% 21%;
-    --portfolio-slate: 215 16% 47%;
-    --portfolio-light-slate: 216 20% 78%;
-    --portfolio-lightest-slate: 216 29% 91%;
-    --portfolio-teal: 173 89% 59%;
-    --portfolio-green: 100 50% 70%;
   }
 
   body {
