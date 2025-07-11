@@ -18,17 +18,7 @@ const HeroSection = () => {
         <p className="text-portfolioSlate max-w-xl text-lg mb-12 animate-fade-in" style={{animationDelay: '400ms'}}>
           I do Dev, I do Ops and I do it (most days).
         </p>
-        <div className="animate-fade-in" style={{animationDelay: '500ms'}}>
-          <Button
-            asChild
-            className="group button-primary"
-          >
-            <a href="#projects">
-              Check out my projects
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
-          </Button>
-        </div>
+        
       </div>
     </section>
   );

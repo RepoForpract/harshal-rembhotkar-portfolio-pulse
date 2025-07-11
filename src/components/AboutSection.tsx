@@ -14,19 +14,17 @@ const AboutSection = () => {
           <p className="mb-4 text-portfolioSlate">
             I'm Web3 enthusiast and software developer passionate about building decentralized applications and exploring the future of the internet.
           </p>
-          <p className="mb-4 text-portfolioSlate">
-            My goal is to create software solutions that are not only efficient and reliable but also delightful to use and easy to maintain.
-          </p>
+        
           <p className="mb-4 text-portfolioSlate">
             When I'm not coding, I enjoy writing technical blogs, exploring new technologies, and sharing knowledge with the community.
           </p>
           <div className="mt-8">
             <a 
-              href="/harshal's resume.pdf" 
+              href="public\harshal's resume.pdf" 
               download 
               className="button-primary inline-flex items-center"
             >
-              Download Resume
+              Resume
             </a>
             <p className="mt-4 text-sm text-portfolioSlate">
               <span className="text-portfolioTeal"></span>
