@@ -5,7 +5,7 @@ const ExperienceSection = () => {
   const experiences = [
     {
       company: "Liquidos.ai",
-      role: "Founding Engineering Intern",
+      role: "Software Engineer Intern",
       startDate: "July 2025",
       endDate: "Present"
     },
